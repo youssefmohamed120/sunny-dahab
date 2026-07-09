@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم Sunny Event</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <!-- شاشة تسجيل الدخول -->
+    <section id="loginScreen">
+        <div class="login-box">
+            <h1>🔐 دخول الأدمن</h1>
+            <form id="loginForm">
+                <input type="password" id="password" placeholder="الباسورد" required autocomplete="current-password">
+                <button type="submit">دخول</button>
+                <p id="loginError" class="error hidden"></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- لوحة التحكم -->
+    <section id="dashboard" class="hidden">
+        <header class="topbar">
+            <h1>📋 لوحة تحكم Sunny Event</h1>
+            <div class="topbar-actions">
+                <button id="refreshBtn">🔄 تحديث</button>
+                <button id="exportBtn">⬇️ تصدير CSV</button>
+                <button id="logoutBtn" class="danger">خروج</button>
+            </div>
+        </header>
+
+        <div class="stats" id="stats"></div>
+
+        <div class="table-wrap">
+            <table id="participantsTable">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>الاسم</th>
+                        <th>الإيميل</th>
+                        <th>الهاتف</th>
+                        <th>الصديق</th>
+                        <th>هاتف الصديق</th>
+                        <th>النتيجة</th>
+                        <th>عدد الجوائز</th>
+                        <th>الحالة</th>
+                        <th>تاريخ التسجيل</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr><td colspan="11" class="empty">جاري التحميل...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>
