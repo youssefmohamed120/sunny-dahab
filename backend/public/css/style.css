@@ -59,13 +59,13 @@ font-family: 'Times New Roman', Times, serif;
 #home button{
     position:relative;
     z-index:2;
-    color:#ffae00;
+    color:#735c00;
 }
 
 #startBtn{
     border:none;
     background:#fff;
-    color:#ff9800;
+    color:#735c00;
     font-size:22px;
     padding:15px 45px;
     border-radius:40px;
@@ -106,7 +106,7 @@ font-family: 'Times New Roman', Times, serif;
     width:100%;
     padding:15px;
     border:none;
-    background:#ff9800;
+    background:#735c00;
     color:white;
     font-size:18px;
     border-radius:10px;
@@ -114,7 +114,7 @@ font-family: 'Times New Roman', Times, serif;
 }
 
 .container button:hover{
-    background:#f57c00;
+    background:#735c00;
 }
 
 /* ===== Quiz ===== */
@@ -152,7 +152,7 @@ font-family: 'Times New Roman', Times, serif;
 }
 
 .answer:hover{
-    background:#ff9800;
+    background:#735c00;
     color:white;
 }
 
@@ -184,7 +184,7 @@ font-family: 'Times New Roman', Times, serif;
     padding:15px;
     border:none;
     border-radius:10px;
-    background:#4CAF50;
+    background:#735c00;
     color:#fff;
     cursor:pointer;
     font-size:18px;
@@ -278,7 +278,7 @@ margin-bottom:15px;
 margin-top:20px;
 padding:12px 30px;
 border:none;
-background:#ff9800;
+background:#735c00;
 color:#fff;
 cursor:pointer;
 border-radius:8px;
