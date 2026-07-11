@@ -21,9 +21,11 @@ import {
     getStats
 } from "./db.js";
 
+ 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const PUBLIC_DIR = path.join(__dirname, "..", "public");
-const ADMIN_DIR = path.join(__dirname, "..", "admin");
+
+const PUBLIC_DIR = path.join(__dirname, "public");
+const ADMIN_DIR = path.join(__dirname, "admin");
 
 const PORT = process.env.PORT || 3000;
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "changeme123";
