@@ -146,7 +146,7 @@ function getClientIp(req) {
     return req.socket.remoteAddress || "unknown";
 }
 
-// تنضيف/تحقق بسيط من المدخلات القادمة من المستخدم العام
+//  
 function sanitizeText(value, maxLen = 200) {
     if (typeof value !== "string") return "";
     return value.trim().slice(0, maxLen);
@@ -188,7 +188,7 @@ function serveStatic(res, rootDir, urlPath) {
     fs.stat(filePath, (err, stats) => {
         if (err) {
             res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
-            res.end("404 - الصفحة غير موجودة");
+            res.end("404 -error");
             return;
         }
         if (stats.isDirectory()) {
@@ -197,7 +197,7 @@ function serveStatic(res, rootDir, urlPath) {
         fs.readFile(filePath, (err2, content) => {
             if (err2) {
                 res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
-                res.end("404 - الصفحة غير موجودة");
+                res.end("404 -error");
                 return;
             }
             const ext = path.extname(filePath).toLowerCase();
@@ -214,7 +214,7 @@ function toCSV(rows) {
     rows.forEach((r) => {
         lines.push(headers.map((h) => escape(h === "prizes" ? r.prizes.join(" | ") : r[h])).join(","));
     });
-    return "\uFEFF" + lines.join("\r\n"); // BOM عشان الإكسل يقرأ العربي صح
+    return "\uFEFF" + lines.join("\r\n"); 
 }
 
 // ===========================
@@ -224,7 +224,7 @@ const server = http.createServer(async (req, res) => {
     const url = new URL(req.url, `http://${req.headers.host}`);
     const pathname = decodeURIComponent(url.pathname);
 
-    // CORS بسيط (لو الأدمن أو الفرونت هيتفتحوا من دومين مختلف)
+    // CORS   
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
