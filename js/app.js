@@ -9,7 +9,7 @@
 //  3) إضافة معالجة أخطاء واضحة للمستخدم لو السيرفر مش شغال أو حصل خطأ شبكة.
 //  4) تعطيل الأزرار أثناء الإرسال عشان نمنع الضغط المتكرر (double submit).
 
-const API_BASE = "sunny-dahab-production.up.railway.app"; // لو الفرونت والباك اند على نفس الدومين سيبها فاضية
+const API_BASE = "https://sunny-dahab-production.up.railway.app"; // لو الفرونت والباك اند على نفس الدومين سيبها فاضية
 // لو هتشغل الفرونت من مكان تاني، حط هنا رابط الباك اند: "https://your-backend.example.com"
 
 let i = 0;
