@@ -11,7 +11,7 @@ const prizes = [
 const questions = [
 
 {
-    question:"     ?Project Location      ",
+    question:"     موقع المشروع؟    ",
     answers:[
         " Valley Qanai  ",
         "Nabq",
@@ -21,7 +21,7 @@ const questions = [
 },
 
 {
-    question:"    ?Project Area   ",
+    question:"     مساحة المشروع؟   ",
     answers:[
         " 95,000 m²",
         "43,000 m²",
@@ -32,7 +32,7 @@ const questions = [
 },
 
 {
-    question:"  ?Total Number of Units   ",
+    question:"  عدد وحدات المشروع الاجمالية؟",
     answers:[
         "130 Units & 15 Villas ",
         " 130 Units & 10 Villas ",
@@ -43,7 +43,7 @@ const questions = [
 },
 
 {
-    question:"? Available Unit Sizes",
+    question:" المساحات المتاحة؟",
 
     type:"checkbox",
 
@@ -70,7 +70,7 @@ const questions = [
 },
 
 {
-    question:" ? Price & Payment Plan",
+    question:"  السعر و طريقة الدفع؟ ",
 
     answers:[
         "EGP 55,000/m² – 25% Down Payment",
