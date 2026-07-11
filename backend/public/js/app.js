@@ -89,10 +89,19 @@ function setFormDisabled(form, disabled) {
 //===========================
 
 s("startBtn").onclick = () => {
-    home.classList.add("hidden");
-    register.classList.remove("hidden");
-};
 
+    home.classList.add("page-exit");
+
+    setTimeout(() => {
+
+        home.classList.add("hidden");
+
+        register.classList.remove("hidden");
+        register.classList.add("page-enter");
+
+    }, 600);
+
+};
 //===========================
 // Register
 //===========================
