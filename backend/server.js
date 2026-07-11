@@ -28,7 +28,7 @@ const ADMIN_DIR = path.join(__dirname, "..", "admin");
 const PORT = process.env.PORT || 3000;
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "changeme123";
 
-if (ADMIN_PASSWORD === "changeme123") {
+if (ADMIN_PASSWORD === "SG1998") {
     console.warn(
         "\n⚠️  تحذير: بتستخدم باسورد الأدمن الافتراضي (changeme123).\n" +
         "   غيّره عن طريق متغير البيئة ADMIN_PASSWORD قبل ما ترفع الموقع فعلياً.\n"
