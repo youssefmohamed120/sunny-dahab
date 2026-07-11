@@ -28,6 +28,7 @@ section{
     padding:20px;
 }
 
+
 /* ===== Start ===== */
 #home{
     background:url("../image/start.jpg") center center/cover no-repeat;
@@ -219,6 +220,7 @@ font-family: 'Times New Roman', Times, serif;
 }
 #result{
     text-align:center;
+    width: 100%;
 }
 
 #result h1{
@@ -343,7 +345,7 @@ animation:fadeUp .8s ease;
 }
 
 .page-enter{
-    animation: pageEnter .6s forwards;
+    animation: pageEnter .6s ease forwards;
 }
 
 
