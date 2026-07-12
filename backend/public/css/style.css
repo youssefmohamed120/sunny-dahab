@@ -13,6 +13,7 @@ body{
     background:#dfe2ce;
     color:#333;
     height: auto;
+    justify-content:center ;
 }
 
 .hidden{
