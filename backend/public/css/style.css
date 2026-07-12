@@ -86,7 +86,7 @@ font-family: 'Times New Roman', Times, serif;
 .container{
     width:100%;
     max-width:420px;
-   
+   height: 90%;
     background:#fff;
     padding:5px;
     border-radius:15px;
