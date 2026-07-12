@@ -20,7 +20,7 @@ body{
 
 section{
     width:100%;
-    min-height:50%;
+    min-height:200%;
     display:flex;
     justify-content:center;
     align-items:center;
