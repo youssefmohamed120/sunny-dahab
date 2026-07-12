@@ -20,7 +20,7 @@ body{
 
 section{
     width:100%;
-    min-height:100vh;
+    min-height:100%;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -86,7 +86,7 @@ font-family: 'Times New Roman', Times, serif;
 .container{
     width:100%;
     max-width:420px;
-    margin:0 10 ;
+   
     background:#fff;
     padding:5px;
     border-radius:15px;
