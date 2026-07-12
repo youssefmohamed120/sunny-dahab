@@ -20,12 +20,12 @@ body{
 
 section{
     width:100%;
-    min-height:200%;
+    min-height:100vh;
     display:flex;
-    justify-content:center;
+    justify-content:start;
     align-items:center;
     flex-direction:column;
-    padding:20px;
+   
 }
 /* ===== Start ===== */
 #home{
