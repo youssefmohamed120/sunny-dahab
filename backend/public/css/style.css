@@ -12,7 +12,7 @@ html, body {
 body{
     background:#dfe2ce;
     color:#333;
-    height: auto;
+    
     justify-content:center ;
 }
 
@@ -22,7 +22,7 @@ body{
 
 section{
     width:100%;
-    min-height:100vh;
+    mix-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
