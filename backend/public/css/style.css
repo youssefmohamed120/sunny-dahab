@@ -4,12 +4,9 @@
     box-sizing:border-box;
     font-family:Arial,sans-serif;
 }
-html,
-body{
-    width:100%;
-    height:100%;
-    margin:0;
-    overflow:hidden;
+html, body {
+    width: 100%;
+    overflow-x: hidden;
 }
 
 body{
@@ -23,7 +20,7 @@ body{
 
 section{
     width:100%;
-    height:100vh;
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -33,7 +30,7 @@ section{
 /* ===== Start ===== */
 #home{
     background:url("../image/start.jpg") center center/cover no-repeat;
-    height:100vh;
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -126,14 +123,8 @@ font-family: 'Times New Roman', Times, serif;
 
 /* ===== Quiz ===== */
 
- 
 #quiz{
     background:#fafafa;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
 }
 
 #progress{
@@ -228,8 +219,6 @@ font-family: 'Times New Roman', Times, serif;
 #result{
     text-align:center;
     width: 100%;
-      height:100vh;
-    overflow-y:auto;  
 }
 
 #result h1{
