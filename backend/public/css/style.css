@@ -4,16 +4,17 @@
     box-sizing:border-box;
     font-family:Arial,sans-serif;
 }
-html, body {
-    width: 100%;
-    overflow-x: hidden;
+html,
+body{
+    width:100%;
+    height:100%;
+    margin:0;
+    overflow:hidden;
 }
 
 body{
     background:#dfe2ce;
     color:#333;
-    
-    justify-content:center ;
 }
 
 .hidden{
@@ -22,12 +23,13 @@ body{
 
 section{
     width:100%;
-    min-height:100vh;
+    height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
     flex-direction:column;
     padding:20px;
+    overflow:hidden;
 }
 /* ===== Start ===== */
 #home{
@@ -86,8 +88,9 @@ font-family: 'Times New Roman', Times, serif;
 /* ===== Forms ===== */
 
 .container{
-    width:100%;
+      width:100%;
     max-width:420px;
+    max-height:90vh;
     margin:0 auto;
     background:#fff;
     padding:35px;
@@ -125,8 +128,14 @@ font-family: 'Times New Roman', Times, serif;
 
 /* ===== Quiz ===== */
 
+ 
 #quiz{
     background:#fafafa;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
 }
 
 #progress{
@@ -221,6 +230,8 @@ font-family: 'Times New Roman', Times, serif;
 #result{
     text-align:center;
     width: 100%;
+      height:100vh;
+    overflow-y:auto;  
 }
 
 #result h1{
