@@ -4,8 +4,10 @@
 // نطلب من السيرفر يختار جايزة (عشان يبقى عادل وميتلاعبش حد بيه من المتصفح) ->
 // ندوّر العجلة بصرياً لحد ما توقف بالظبط على الجايزة اللي رجعها السيرفر.
 
-const API_BASE = "https://sunny-dahab-production.up.railway.app";
-// لو الفرونت والباك اند شغالين على نفس الدومين، سيب API_BASE = ""
+const API_BASE = "";
+// spin.html بيتقدّم من نفس السيرفر اللي فيه الـ API (server.js بيعمل serve لـ public/)
+// فمفيش داعي لدومين منفصل هنا. لو يوماً استضفت spin.html على دومين تاني غير الباك اند،
+// حط هنا رابط الباك اند الصحيح، زي: "https://your-backend.example.com"
 
 const canvas = document.getElementById("wheel");
 const ctx = canvas.getContext("2d");
