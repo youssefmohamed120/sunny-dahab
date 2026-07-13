@@ -15,6 +15,7 @@ const API_BASE = "https://sunny-dahab-production.up.railway.app"; // لو الف
 let i = 0;
 let score = 0;
 let referralDone = false;
+let finalPrize = "";
 
 const userData = {
     id: null,
@@ -215,13 +216,12 @@ function showQuestion() {
 
             userData.answers.push([...checked].map((x) => Number(x.value)));
 
-            score++;
-            userData.prizes.push(prizes[i]);
-
-            showPrize(prizes[i], () => {
-                i++;
-                showQuestion();
-            });
+           score++;
+i++;
+showQuestion();score++;
+i++;
+showQuestion();
+            
         };
 
         answers.appendChild(btn);
@@ -244,10 +244,9 @@ function showQuestion() {
                     score++;
                     userData.prizes.push(prizes[i]);
 
-                    showPrize(prizes[i], () => {
-                        i++;
-                        showQuestion();
-                    });
+                   score++;
+i++;
+showQuestion();
                 } else {
                     i++;
                     showQuestion();
@@ -317,6 +316,8 @@ async function saveParticipant() {
 //===========================
 
 async function finish() {
+    finalPrize = prizes[Math.floor(Math.random() * prizes.length)];
+userData.prizes = [finalPrize];
     const saved = await saveParticipant();
 
     quiz.classList.add("hidden");
@@ -329,12 +330,10 @@ async function finish() {
             <h2>🎉 شكراً لمشاركتك</h2>
             <p>${saved ? "تم تسجيل بياناتك بنجاح" : "تم عرض نتيجتك، بس حصلت مشكلة بسيطة في حفظها. لو ممكن قول للمنظمين."}</p>
 
-            <h3>عدد الجوائز : ${userData.prizes.length}</h3>
-
-            <ul>
-                ${userData.prizes.map((p) => `<li>🎁 ${p}</li>`).join("")}
-            </ul>
-
+          <h3>🎁 هديتك</h3>
+<p style="font-size:24px;font-weight:bold;">
+    ${finalPrize}
+</p>
             <h3>النتيجة : ${score} / ${questions.length}</h3>
         `;
     }
