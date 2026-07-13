@@ -1,23 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>Sunny Dahab | Spin & Win</title>
-
 <link rel="stylesheet" href="./css/spin.css">
-
 </head>
-
 <body>
 
 <div class="page">
-
-   
 
     <h1>🎉 Spin & Win 🎉</h1>
 
@@ -30,16 +21,15 @@
         type="tel"
         placeholder="Phone Number">
 
+    <p id="statusMsg" class="status-msg"></p>
+
     <div class="wheel-box">
-
         <div class="pointer"></div>
-
         <canvas
             id="wheel"
             width="500"
             height="500">
         </canvas>
-
     </div>
 
     <button id="spinBtn">
@@ -48,7 +38,15 @@
 
 </div>
 
-<script src="./js/spin.js"></script>
+<div id="resultModal" class="modal hidden">
+    <div class="modal-content">
+        <h2>🎉 مبروك!</h2>
+        <p>لقد ربحت</p>
+        <h3 id="resultPrize"></h3>
+        <button id="closeModal">تمام</button>
+    </div>
+</div>
 
+<script src="./js/spin.js"></script>
 </body>
 </html>
