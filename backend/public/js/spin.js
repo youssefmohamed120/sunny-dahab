@@ -1,61 +1,93 @@
-const phone=document.getElementById("phone");
+const canvas = document.getElementById("wheel");
 
-const btn=document.getElementById("spinBtn");
+const ctx = canvas.getContext("2d");
 
-btn.onclick=async()=>{
+const prizes = [
 
-    if(phone.value==""){
+"Coffee Mug",
 
-        alert("Enter phone");
+"Cap",
 
-        return;
+"T-Shirt",
 
-    }
+"Notebook",
 
-    const check=await fetch("/api/spin/check",{
+"Sticker",
 
-        method:"POST",
+"Discount",
 
-        headers:{
-            "Content-Type":"application/json"
-        },
+"Keychain",
 
-        body:JSON.stringify({
+"Gift"
 
-            phone:phone.value
+];
 
-        })
+const colors=[
 
-    });
+"#FFD166",
 
-    const data=await check.json();
+"#06D6A0",
 
-    if(!data.canSpin){
+"#118AB2",
 
-        alert("You already played");
+"#EF476F",
 
-        return;
+"#F78C6B",
 
-    }
+"#83C5BE",
 
-    const play=await fetch("/api/spin/play",{
+"#FFBE0B",
 
-        method:"POST",
+"#90BE6D"
 
-        headers:{
-            "Content-Type":"application/json"
-        },
+];
 
-        body:JSON.stringify({
+const size=500;
 
-            phone:phone.value
+const center=size/2;
 
-        })
+const radius=230;
 
-    });
+const angle=(2*Math.PI)/prizes.length;
 
-    const prize=await play.json();
+for(let i=0;i<prizes.length;i++){
 
-    console.log(prize);
+ctx.beginPath();
+
+ctx.moveTo(center,center);
+
+ctx.arc(
+
+center,
+
+center,
+
+radius,
+
+i*angle,
+
+(i+1)*angle
+
+);
+
+ctx.fillStyle=colors[i];
+
+ctx.fill();
+
+ctx.save();
+
+ctx.translate(center,center);
+
+ctx.rotate(i*angle+angle/2);
+
+ctx.fillStyle="#fff";
+
+ctx.font="18px Arial";
+
+ctx.textAlign="right";
+
+ctx.fillText(prizes[i],190,10);
+
+ctx.restore();
 
 }
