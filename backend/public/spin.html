@@ -1,30 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sunny Dahab | Spin & Win</title>
 
-    <link rel="stylesheet" href="css/spin.css">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Sunny Dahab | Spin & Win</title>
+
+<link rel="stylesheet" href="./css/spin.css">
+
 </head>
+
 <body>
 
-<div class="container">
+<div class="page">
 
-    <img src="assets/logo.png" class="logo">
+    <img src="./image/gold_icon.svg" class="logo">
 
     <h1>🎉 Spin & Win 🎉</h1>
 
-    <input
-        type="tel"
-        id="phone"
-        placeholder="Enter Your Phone Number">
+    <p class="subtitle">
+        Enter your phone number then spin the wheel.
+    </p>
 
-    <div class="wheel-container">
+    <input
+        id="phone"
+        type="tel"
+        placeholder="Phone Number">
+
+    <div class="wheel-box">
 
         <div class="pointer"></div>
 
-        <canvas id="wheel" width="500" height="500"></canvas>
+        <canvas
+            id="wheel"
+            width="500"
+            height="500">
+        </canvas>
 
     </div>
 
@@ -34,7 +48,7 @@
 
 </div>
 
-<script src="js/spin.js"></script>
+<script src="./js/spin.js"></script>
 
 </body>
 </html>
