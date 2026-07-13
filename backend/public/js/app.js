@@ -174,12 +174,11 @@ function showQuestion() {
         finish();
         return;
     }
-
-    if (i === 5 && !referralDone) {
-        quiz.classList.add("hidden");
-        referral.classList.remove("hidden");
-        return;
-    }
+if (i === 4 && !referralDone) {
+    quiz.classList.add("hidden");
+    referral.classList.remove("hidden");
+    return;
+}
 
     const q = questions[i];
 
@@ -214,12 +213,33 @@ function showQuestion() {
                 return;
             }
 
-            userData.answers.push([...checked].map((x) => Number(x.value)));
+  const selected = [...checked].map(x => Number(x.value));
 
- score++;
+userData.answers.push(selected);
+
+const correct =
+    selected.length === q.correct.length &&
+    selected.every(v => q.correct.includes(v));
+
+if (correct) {
+    score++;
+}
+
+i++;
+showQuestion();const selected = [...checked].map(x => Number(x.value));
+
+userData.answers.push(selected);
+
+const correct =
+    selected.length === q.correct.length &&
+    selected.every(v => q.correct.includes(v));
+
+if (correct) {
+    score++;
+}
+
 i++;
 showQuestion();
-            
         };
 
         answers.appendChild(btn);
