@@ -313,7 +313,7 @@ async function saveParticipant() {
         return false;
     }
 }
-
+window.scrollTo(0, 0);
 //===========================
 // Finish
 //===========================

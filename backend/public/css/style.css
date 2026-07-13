@@ -218,9 +218,16 @@ font-family: 'Times New Roman', Times, serif;
     border-radius:8px;
 }
 #result{
-    text-align:center;
-    width: 100%;
-}
+     text-align:center;
+     width: 100%;
+ }
+ 
+ #register,
+ #quiz,
+ #referral,
+ #result{
+     min-height:100vh;
+ }
 
 #result h1{
     font-size:80px;
