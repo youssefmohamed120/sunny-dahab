@@ -175,7 +175,7 @@ function showQuestion() {
         return;
     }
 
-    if (i === 5 && !referralDone) {
+    if (i === 4 && !referralDone) {
         quiz.classList.add("hidden");
         referral.classList.remove("hidden");
         return;
