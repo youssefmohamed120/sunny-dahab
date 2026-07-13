@@ -226,19 +226,6 @@ if (correct) {
 }
 
 i++;
-showQuestion();const selected = [...checked].map(x => Number(x.value));
-
-userData.answers.push(selected);
-
-const correct =
-    selected.length === q.correct.length &&
-    selected.every(v => q.correct.includes(v));
-
-if (correct) {
-    score++;
-}
-
-i++;
 showQuestion();
         };
 
