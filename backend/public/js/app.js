@@ -216,9 +216,7 @@ function showQuestion() {
 
             userData.answers.push([...checked].map((x) => Number(x.value)));
 
-           score++;
-i++;
-showQuestion();score++;
+ score++;
 i++;
 showQuestion();
             
@@ -242,9 +240,7 @@ showQuestion();
 
                 if (index === q.correct) {
                     score++;
-                    userData.prizes.push(prizes[i]);
-
-                   score++;
+                   
 i++;
 showQuestion();
                 } else {
