@@ -17,6 +17,9 @@ import {
     findById,
     completeParticipant,
     getAllParticipants,
+    hasPlayedSpin,
+saveSpinPrize,
+getSpinStats,
     deleteParticipant,
     getStats
 } from "./db.js";
@@ -66,7 +69,33 @@ function isValidSession(token) {
 const loginAttempts = new Map(); // ip -> { count, lockUntil }
 const MAX_ATTEMPTS = 5;
 const LOCK_MS = 15 * 60 * 1000; // 15 دقيقة
+const spinPrizes = [
+    { name: "Coffee Mug", weight: 20 },
+    { name: "Cap", weight: 15 },
+    { name: "T-Shirt", weight: 5 },
+    { name: "Notebook", weight: 15 },
+    { name: "Sticker", weight: 20 },
+    { name: "20% Discount", weight: 20 },
+    { name: "Keychain", weight: 5 }
+];
 
+function pickPrize() {
+
+    const total = spinPrizes.reduce((s, p) => s + p.weight, 0);
+
+    let random = Math.random() * total;
+
+    for (const prize of spinPrizes) {
+
+        random -= prize.weight;
+
+        if (random <= 0)
+            return prize.name;
+    }
+
+    return spinPrizes[0].name;
+
+}
 function isLocked(ip) {
     const entry = loginAttempts.get(ip);
     if (!entry) return false;
@@ -265,7 +294,74 @@ const server = http.createServer(async (req, res) => {
             const existing = findByPhone(phone);
             return sendJSON(res, 200, { exists: !!existing });
         }
+// ===== API: التحقق من إمكانية اللعب =====
+if (pathname === "/api/spin/check" && req.method === "POST") {
 
+    const body = await readBody(req);
+    const phone = sanitizeText(body.phone, 30);
+
+    if (!phone) {
+        return sendJSON(res, 400, {
+            error: "رقم الهاتف مطلوب"
+        });
+    }
+
+    const participant = findByPhone(phone);
+
+    if (!participant) {
+        return sendJSON(res, 404, {
+            error: "هذا الرقم غير مسجل"
+        });
+    }
+
+    if (hasPlayedSpin(phone)) {
+        return sendJSON(res, 200, {
+            canSpin: false,
+            message: "لقد لعبت من قبل"
+        });
+    }
+
+    return sendJSON(res, 200, {
+        canSpin: true
+    });
+
+}
+// ===== API: تنفيذ الـ Spin =====
+if (pathname === "/api/spin/play" && req.method === "POST") {
+
+    const body = await readBody(req);
+    const phone = sanitizeText(body.phone, 30);
+
+    if (!phone) {
+        return sendJSON(res, 400, {
+            error: "رقم الهاتف مطلوب"
+        });
+    }
+
+    const participant = findByPhone(phone);
+
+    if (!participant) {
+        return sendJSON(res, 404, {
+            error: "هذا الرقم غير مسجل"
+        });
+    }
+
+    if (hasPlayedSpin(phone)) {
+        return sendJSON(res, 400, {
+            error: "لقد استخدمت الـ Spin بالفعل"
+        });
+    }
+
+    const prize = pickPrize();
+
+    saveSpinPrize(phone, prize);
+
+    return sendJSON(res, 200, {
+        success: true,
+        prize
+    });
+
+}
         // ===== API: حفظ نتيجة المسابقة عند الانتهاء =====
         const completeMatch = pathname.match(/^\/api\/participants\/(\d+)\/complete$/);
         if (completeMatch && req.method === "PUT") {
@@ -327,7 +423,11 @@ const server = http.createServer(async (req, res) => {
             if (pathname === "/api/admin/participants" && req.method === "GET") {
                 return sendJSON(res, 200, { participants: getAllParticipants(), stats: getStats() });
             }
-
+            if (pathname === "/api/admin/spin" && req.method === "GET") {
+    return sendJSON(res, 200, {
+        stats: getSpinStats()
+    });
+}
             if (pathname === "/api/admin/export.csv" && req.method === "GET") {
                 const csv = toCSV(getAllParticipants());
                 res.writeHead(200, {
