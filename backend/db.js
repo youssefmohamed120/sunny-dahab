@@ -33,6 +33,20 @@ db.exec(`
         updatedAt TEXT NOT NULL
     );
 `);
+// ===== Spin & Win =====
+
+// لو الأعمدة مش موجودة، أضفها مرة واحدة
+try {
+    db.exec(`ALTER TABLE participants ADD COLUMN spinPrize TEXT DEFAULT ''`);
+} catch {}
+
+try {
+    db.exec(`ALTER TABLE participants ADD COLUMN spinPlayed INTEGER DEFAULT 0`);
+} catch {}
+
+try {
+    db.exec(`ALTER TABLE participants ADD COLUMN spinPlayedAt TEXT DEFAULT ''`);
+} catch {}
 
 function rowToParticipant(row) {
     if (!row) return null;
@@ -47,8 +61,12 @@ function rowToParticipant(row) {
         prizes: JSON.parse(row.prizes || "[]"),
         answers: JSON.parse(row.answers || "[]"),
         status: row.status,
+        spinPrize: row.spinPrize || "",
+spinPlayed: Boolean(row.spinPlayed),
+spinPlayedAt: row.spinPlayedAt || "",
         createdAt: row.createdAt,
         updatedAt: row.updatedAt
+
     };
 }
 
@@ -112,6 +130,56 @@ export function getStats() {
         registeredOnly: total - completed,
         avgScore: avgScoreRow.a ? Math.round(avgScoreRow.a * 100) / 100 : 0
     };
+}
+export function hasPlayedSpin(phone) {
+    const stmt = db.prepare(`
+        SELECT spinPlayed
+        FROM participants
+        WHERE phone = ?
+    `);
+
+    const row = stmt.get(phone);
+
+    if (!row) return false;
+
+    return Boolean(row.spinPlayed);
+}
+
+export function saveSpinPrize(phone, prize) {
+
+    const stmt = db.prepare(`
+        UPDATE participants
+        SET
+            spinPrize = ?,
+            spinPlayed = 1,
+            spinPlayedAt = ?,
+            updatedAt = ?
+        WHERE phone = ?
+    `);
+
+    const now = new Date().toISOString();
+
+    stmt.run(
+        prize,
+        now,
+        now,
+        phone
+    );
+
+    return findByPhone(phone);
+}
+
+export function getSpinStats() {
+
+    return db.prepare(`
+        SELECT
+            spinPrize,
+            COUNT(*) AS total
+        FROM participants
+        WHERE spinPlayed = 1
+        GROUP BY spinPrize
+    `).all();
+
 }
 
 export default db;
