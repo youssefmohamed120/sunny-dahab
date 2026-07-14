@@ -27,7 +27,7 @@ section{
     justify-content:center;
     align-items:center;
     flex-direction:column;
-    padding:40px 20px;
+    padding:20px 10px;
 }
 /* ===== Start ===== */
 #home{
@@ -91,7 +91,7 @@ font-family: 'Times New Roman', Times, serif;
     max-width:420px;
     margin:0 auto;
     background:#fff;
-    padding:35px;
+    padding:20px;
     border-radius:15px;
     box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
@@ -102,10 +102,10 @@ font-family: 'Times New Roman', Times, serif;
  
 .container input{
     width:100%;
-    padding:15px;
+    padding:10px;
     margin-bottom:15px;
     border:1px solid #ddd;
-    border-radius:10px;
+    border-radius:8px;
     font-size:16px;
 }
  
