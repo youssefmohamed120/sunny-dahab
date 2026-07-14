@@ -1,4 +1,3 @@
-SS
 *{
     margin:0;
     padding:0;
@@ -7,30 +6,27 @@ SS
 }
 html, body {
     width: 100%;
-    height: 100%;
-    margin:0;
+        margin:0;
     padding:0;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y:visible;
 }
- 
+
 body{
     background:#dfe2ce;
     color:#333;
 }
- 
+
 .hidden{
     display:none;
 }
 section{
     width:100%;
-    height:100vh;
-    height:100dvh;
     display:flex;
     justify-content:center;
     align-items:center;
     flex-direction:column;
-    padding:20px;
-    overflow:hidden;
+    padding:40px 20px;
 }
 /* ===== Start ===== */
 #home{
@@ -43,7 +39,7 @@ section{
     flex-direction:column;
     position:relative;
 }
- 
+
 #home::before{
     content:"";
     position:absolute;
@@ -56,7 +52,7 @@ section{
     text-align: center;
     color: #fff;
 }
- 
+
 .home-content h1{
     font-size: 100px;
 font-family: 'Times New Roman', Times, serif;
@@ -64,14 +60,14 @@ font-family: 'Times New Roman', Times, serif;
     margin-bottom: 20px;
     text-shadow: 0 3px 10px rgba(0,0,0,.4);
 }
- 
+
 #home h1,
 #home button{
     position:relative;
     z-index:2;
     color:#735c00;
 }
- 
+
 #startBtn{
     border:none;
     background:#fff;
@@ -82,38 +78,36 @@ font-family: 'Times New Roman', Times, serif;
     cursor:pointer;
     transition:.3s;
 }
- 
+
 #startBtn:hover{
     transform:scale(1.05);
 }
- 
+
 /* ===== Forms ===== */
- 
+
 .container{
     width:100%;
     max-width:420px;
-    max-height:100%;
     margin:0 auto;
     background:#fff;
-    padding:30px;
+    padding:35px;
     border-radius:15px;
     box-shadow:0 10px 25px rgba(0,0,0,.15);
-    overflow:hidden;
 }
 .container h2{
     text-align:center;
-    margin-bottom:18px;
+    margin-bottom:25px;
 }
- 
+
 .container input{
     width:100%;
-    padding:12px;
-    margin-bottom:12px;
+    padding:15px;
+    margin-bottom:15px;
     border:1px solid #ddd;
     border-radius:10px;
     font-size:16px;
 }
- 
+
 .container button{
     width:100%;
     padding:15px;
@@ -124,32 +118,32 @@ font-family: 'Times New Roman', Times, serif;
     border-radius:10px;
     cursor:pointer;
 }
- 
+
 .container button:hover{
     background:#735c00;
 }
- 
+
 /* ===== Quiz ===== */
- 
+
 #quiz{
     background:#fafafa;
 }
- 
+
 #progress{
     margin-bottom:20px;
     color:#666;
 }
- 
+
 #question{
     margin-bottom:30px;
     text-align:center;
 }
- 
+
 #answers{
     width:100%;
     max-width:500px;
 }
- 
+
 .answer{
     width:100%;
     padding:15px;
@@ -162,14 +156,14 @@ font-family: 'Times New Roman', Times, serif;
     font-size:17px;
     transition:.3s;
 }
- 
+
 .answer:hover{
     background:#735c00;
     color:white;
 }
- 
+
 /* Checkbox */
- 
+
 .checkbox-item{
     display:block;
     background:white;
@@ -178,7 +172,7 @@ font-family: 'Times New Roman', Times, serif;
     border-radius:10px;
     box-shadow:0 2px 8px rgba(0,0,0,.1);
 }
- 
+
 .checkbox-item input{
     margin-left:10px;
 }
@@ -186,7 +180,7 @@ font-family: 'Times New Roman', Times, serif;
     cursor:pointer;
     transition:.3s;
 }
- 
+
 .checkbox-item:hover{
     background:#fff3e0;
 }
@@ -201,7 +195,7 @@ font-family: 'Times New Roman', Times, serif;
     cursor:pointer;
     font-size:18px;
 }
- 
+
 /* ===== Result ===== */
 #resultText{
     background:#fff;
@@ -211,13 +205,13 @@ font-family: 'Times New Roman', Times, serif;
     border-radius:15px;
     box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
- 
+
 #resultText ul{
     list-style:none;
     margin:20px 0;
     padding:0;
 }
- 
+
 #resultText li{
     padding:10px;
     margin:8px 0;
@@ -233,93 +227,54 @@ font-family: 'Times New Roman', Times, serif;
  #quiz,
  #referral,
  #result{
-     justify-content:center;
+     min-height:auto;
+     height:auto;
+     justify-content:flex-start;
+     padding:60px 20px 80px;
  }
- 
+
 #result h1{
     font-size:80px;
     margin-bottom:20px;
 }
- 
+
 #result h2{
     color:#4CAF50;
     margin-bottom:15px;
 }
- 
+
 #result p{
     font-size:20px;
 }
- 
+
 @media(max-width:768px){
- 
+
 .start-img{
     width:240px;
 }
- 
+
 #home h1{
     font-size:30px;
 }
- 
+
 .home-content h1{
     font-size:48px;
 }
- 
+
 #result h1{
     font-size:40px;
 }
- 
+
 .container{
     padding:25px;
 }
- 
+
 .answer{
     font-size:15px;
 }
- 
+
 }
- 
-@media(max-height:700px){
- 
-.container{
-    padding:18px;
-}
- 
-.container h2{
-    font-size:18px;
-    margin-bottom:10px;
-}
- 
-.container input{
-    padding:9px;
-    margin-bottom:8px;
-}
- 
-.container button{
-    padding:10px;
-}
- 
-.answer{
-    padding:10px;
-    margin:6px 0;
-    font-size:14px;
-}
- 
-.checkbox-item{
-    padding:10px;
-    margin:6px 0;
-}
- 
-#question{
-    margin-bottom:14px;
-    font-size:16px;
-}
- 
-#progress{
-    margin-bottom:10px;
-}
- 
-}
- 
+
 .popup{
     box-shadow:0 20px 50px rgba(0,0,0,.3);
 position:fixed;
@@ -330,7 +285,7 @@ justify-content:center;
 align-items:center;
 z-index:9999;
 }
- 
+
 .popup-box{
 background:#fff;
 padding:30px;
@@ -339,11 +294,11 @@ text-align:center;
 width:300px;
 animation:pop .3s;
 }
- 
+
 .popup-box h2{
 margin-bottom:15px;
 }
- 
+
 .popup-box button{
 margin-top:20px;
 padding:12px 30px;
@@ -353,91 +308,90 @@ color:#fff;
 cursor:pointer;
 border-radius:8px;
 }
- 
+
 @keyframes pop{
- 
+
 from{
- 
+
 transform:scale(.5);
- 
+
 opacity:0;
- 
+
 }
- 
+
 to{
- 
+
 transform:scale(1);
- 
+
 opacity:1;
- 
+
 }
- 
+
 }
 @keyframes fadeUp{
- 
+
 0%{
- 
+
 opacity:0;
- 
+
 transform:translateY(50px);
- 
+
 }
- 
+
 100%{
- 
+
 opacity:1;
- 
+
 transform:translateY(0);
- 
+
 }
- 
+
 }
- 
+
 .home-content,
 .container,
 #question,
 .answer{
- 
+
 animation:fadeUp .8s ease;
- 
+
 }
 /* ===== Page Transition ===== */
- 
+
 .page-exit{
     animation: pageExit .6s forwards;
 }
- 
+
 .page-enter{
     animation: pageEnter .6s ease forwards;
 }
- 
- 
+
+
 @keyframes pageExit{
- 
+
     from{
         opacity:1;
         transform:translateX(0);
     }
- 
+
     to{
         opacity:0;
         transform:translateX(-100%);
     }
- 
+
 }
- 
- 
+
+
 @keyframes pageEnter{
- 
+
     from{
         opacity:0;
         transform:translateX(100%);
     }
- 
+
     to{
         opacity:1;
         transform:translateX(0);
     }
- 
+
 }
- 
