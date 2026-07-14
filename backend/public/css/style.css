@@ -33,6 +33,7 @@ section{
 #home{
     background:url("../image/start.jpg") center center/cover no-repeat;
     min-height:100vh;
+    min-height:100dvh;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -228,7 +229,9 @@ font-family: 'Times New Roman', Times, serif;
  #referral,
  #result{
      min-height:auto;
-     padding:60px 20px;
+     height:auto;
+     justify-content:flex-start;
+     padding:60px 20px 80px;
  }
  
 #result h1{
