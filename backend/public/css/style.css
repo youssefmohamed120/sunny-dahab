@@ -201,14 +201,14 @@ font-family: 'Times New Roman', Times, serif;
     background:#fff;
     max-width:600px;
     width:90%;
-    padding:30px;
+    padding:10px;
     border-radius:15px;
     box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
 
 #resultText ul{
     list-style:none;
-    margin:20px 0;
+    margin:10px 0;
     padding:0;
 }
 
@@ -229,8 +229,8 @@ font-family: 'Times New Roman', Times, serif;
  #result{
      min-height:auto;
      height:auto;
-     justify-content:flex-start;
-     padding:60px 20px 80px;
+     justify-content:center;
+     padding:40px 20px 80px;
  }
 
 #result h1{
