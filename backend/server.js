@@ -74,9 +74,9 @@ const spinPrizes = [
     { name: "Cap", weight: 15 },
     { name: "T-Shirt", weight: 5 },
     { name: "Notebook", weight: 3 },
-    { name: "Sticker", weight: 20 },
+    { name: "Sticker", weight: 10 },
     
-    { name: "Good luck next time", weight: 1 }
+    { name: "Good luck next time", weight: 20 }
 ];
 
 function pickPrize() {
