@@ -224,15 +224,19 @@ font-family: 'Times New Roman', Times, serif;
      width: 100%;
  }
  
- #register,
- #quiz,
- #referral,
- #result{
-     min-height:auto;
-     height:auto;
-     justify-content:center;
-     padding:40px 20px 80px;
- }
+#register,
+#quiz,
+#referral,
+#result {
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: 100vh;
+    height: 100dvh;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden;
+}
 
 #result h1{
     font-size:80px;
