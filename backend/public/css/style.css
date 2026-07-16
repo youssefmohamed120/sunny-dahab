@@ -396,3 +396,23 @@ animation:fadeUp .8s ease;
     }
 
 }
+/* منع السكرول تمامًا في صفحتي الريجستر والأسئلة على الشاشات الكبيرة */
+body:has(#register.page:not(.hidden)),
+body:has(#quiz.page:not(.hidden)) {
+    overflow: hidden;
+}
+
+/* الشاشات الصغيرة: نسمح بالسكرول لكن نخفي شكل السكرول بار */
+@media (max-width: 768px) {
+    body:has(#register.page:not(.hidden)),
+    body:has(#quiz.page:not(.hidden)) {
+        overflow-y: auto;
+        scrollbar-width: none;      /* Firefox */
+        -ms-overflow-style: none;   /* Edge القديم */
+    }
+
+    body:has(#register.page:not(.hidden))::-webkit-scrollbar,
+    body:has(#quiz.page:not(.hidden))::-webkit-scrollbar {
+        display: none;              /* Chrome / Safari / Edge الجديد */
+    }
+}
