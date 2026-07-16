@@ -71,11 +71,11 @@ const MAX_ATTEMPTS = 5;
 const LOCK_MS = 15 * 60 * 1000; // 15 دقيقة
 const spinPrizes = [
     { name: "Coffee Mug", weight: 1 },
-    { name: "Cap", weight: 15 },
+    { name: "Cap", weight: 14},
     { name: "T-Shirt", weight: 5 },
     { name: "Notebook", weight: 3 },
     { name: "Sticker", weight: 10 }, 
-    { name: "Good luck next time", weight: 20 }
+    { name: "Good luck next time", weight: 15 }
 ];
 
 function pickPrize() {
