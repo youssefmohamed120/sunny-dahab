@@ -70,13 +70,13 @@ const loginAttempts = new Map(); // ip -> { count, lockUntil }
 const MAX_ATTEMPTS = 5;
 const LOCK_MS = 15 * 60 * 1000; // 15 دقيقة
 const spinPrizes = [
-    { name: "Coffee Mug", weight: 20 },
+    { name: "Coffee Mug", weight: 1 },
     { name: "Cap", weight: 15 },
     { name: "T-Shirt", weight: 5 },
-    { name: "Notebook", weight: 15 },
+    { name: "Notebook", weight: 3 },
     { name: "Sticker", weight: 20 },
-    { name: "20% Discount", weight: 20 },
-    { name: "Keychain", weight: 5 }
+    
+    { name: "Keychain", weight: 1 }
 ];
 
 function pickPrize() {
