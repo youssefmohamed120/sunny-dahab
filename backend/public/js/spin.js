@@ -26,7 +26,7 @@ const prizes = [
     { name: "Notebook", color: "#EF476F" },
     { name: "Sticker", color: "#F78C6B" },
     { name: "20% Discount", color: "#83C5BE" },
-    { name: "Keychain", color: "#FFBE0B" }
+    { name: "Good luck next time", color: "#FFBE0B" }
 ];
 
 const size = 500;
